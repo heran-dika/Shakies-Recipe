@@ -153,13 +153,14 @@ ol {
   font-family: var(--font-display);
   font-weight: var(--font-bold);
   font-size: var(--text-base);
-  line-height: 1;
+  line-height: 1.35;
   border: none;
   border-radius: var(--radius-full);
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* Primary */
@@ -216,14 +217,50 @@ ol {
 }
 
 .btn--xl {
-  padding: var(--space-4) var(--space-12);
-  font-size: var(--text-xl);
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-base);
+  width: 100%;
+  max-width: 480px;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.35;
+}
+
+@media (min-width: 480px) {
+  .btn--xl {
+    font-size: var(--text-lg);
+    padding: var(--space-4) var(--space-10);
+  }
+}
+
+@media (min-width: 768px) {
+  .btn--xl {
+    font-size: var(--text-xl);
+    padding: var(--space-4) var(--space-12);
+    width: auto;
+    white-space: nowrap;
+  }
 }
 
 /* Focus ring for keyboard nav (non-primary variants) */
 .btn:focus-visible {
   outline: 3px solid var(--color-primary-light);
   outline-offset: 2px;
+}
+
+/* Mobile: hero & CTA buttons go full-width */
+@media (max-width: 479px) {
+  .btn--lg {
+    width: 100%;
+    font-size: var(--text-base);
+    padding: var(--space-4) var(--space-6);
+    text-align: center;
+  }
+
+  .btn--sm {
+    font-size: 0.8rem;
+    padding: var(--space-2) var(--space-3);
+  }
 }
 
 /* ============================================================
@@ -295,7 +332,13 @@ ol {
    ============================================================ */
 .hero {
   background-color: var(--color-bg);
-  padding-block: var(--space-16) var(--space-12);
+  padding-block: var(--space-10) var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-block: var(--space-16) var(--space-12);
+  }
 }
 
 .hero__container {
@@ -312,6 +355,17 @@ ol {
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
+  align-items: flex-start;
+}
+
+@media (max-width: 479px) {
+  .hero__content {
+    align-items: stretch;
+  }
+
+  .hero__content .btn--lg {
+    width: 100%;
+  }
 }
 
 .hero__eyebrow {
@@ -603,9 +657,15 @@ ol {
    CTA SECTION AKHIR
    ============================================================ */
 .cta-section {
-  padding-block: var(--space-20);
+  padding-block: var(--space-12);
   background-color: var(--color-cta-bg);
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .cta-section {
+    padding-block: var(--space-20);
+  }
 }
 
 .cta-section .container {
