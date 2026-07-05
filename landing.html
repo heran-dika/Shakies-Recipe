@@ -76,6 +76,79 @@
       </div>
     </section>
 
+    <!-- FLASH DISCOUNT SECTION -->
+    <section class="flash-discount" id="flash-discount" aria-labelledby="flash-discount-heading">
+      <div class="container">
+        <div class="flash-discount__card" id="flash-discount-card">
+
+          <!-- State: aktif (timer masih jalan) -->
+          <div class="flash-discount__active" id="flash-active">
+            <div class="flash-discount__badge">⚡ PENAWARAN KILAT</div>
+            <h2 class="flash-discount__title" id="flash-discount-heading">
+              Diskon Up to 50K untuk 5 Pembeli Pertama!
+            </h2>
+            <p class="flash-discount__sub">
+              Berlaku untuk <strong id="flash-slots">5</strong> orang pertama — siapa cepat dia dapat.
+              Klik tombol di bawah untuk menyalin kode, lalu paste saat checkout.
+            </p>
+
+            <!-- Countdown timer -->
+            <div class="flash-discount__timer" aria-live="polite" aria-label="Waktu tersisa">
+              <div class="flash-timer__block">
+                <span class="flash-timer__num" id="timer-hours">02</span>
+                <span class="flash-timer__label">Jam</span>
+              </div>
+              <span class="flash-timer__sep">:</span>
+              <div class="flash-timer__block">
+                <span class="flash-timer__num" id="timer-minutes">00</span>
+                <span class="flash-timer__label">Menit</span>
+              </div>
+              <span class="flash-timer__sep">:</span>
+              <div class="flash-timer__block">
+                <span class="flash-timer__num" id="timer-seconds">00</span>
+                <span class="flash-timer__label">Detik</span>
+              </div>
+            </div>
+
+            <!-- Tombol salin kupon -->
+            <div class="flash-discount__coupon">
+              <button
+                class="btn btn--primary flash-discount__copy-btn"
+                id="copy-coupon-btn"
+                aria-label="Salin kode kupon diskon"
+                type="button"
+              >
+                🎁 Salin Kode Diskon
+              </button>
+            </div>
+            <p class="flash-discount__copy-confirm" id="copy-confirm" aria-live="polite"></p>
+            <p class="flash-discount__hint">
+              💡 Cara pakai: Salin kode → buka halaman checkout → paste di kolom <em>"Kode Voucher"</em>
+            </p>
+          </div>
+
+          <!-- State: expired -->
+          <div class="flash-discount__expired" id="flash-expired" hidden>
+            <div class="flash-discount__expired-icon" aria-hidden="true">⏰</div>
+            <h2 class="flash-discount__expired-title">Penawaran Sudah Berakhir</h2>
+            <p class="flash-discount__expired-sub">
+              Sayang sekali, penawaran diskon up to 50K sudah tidak tersedia.<br>
+              Tapi resep + WhatsApp Mentoring masih bisa kamu dapatkan sekarang!
+            </p>
+            <a
+              class="btn btn--primary btn--lg"
+              href="https://lynk.id/shakies_co/ndolwn90egy4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Beli Resep Sekarang
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- PAIN VS PLEASURE COMPARISON SECTION -->
     <section class="comparison" aria-labelledby="comparison-heading">
       <div class="container">
@@ -252,7 +325,7 @@
         </a>
       </nav>
       <p class="footer__copy">
-        &copy; <span id="footer-year">2025</span> Shakies Co. All rights reserved.
+        &copy; <span id="footer-year">2023</span> Shakies Co. All rights reserved.
       </p>
     </div>
   </footer>

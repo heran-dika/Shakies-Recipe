@@ -236,9 +236,11 @@ ol {
 @media (min-width: 768px) {
   .btn--xl {
     font-size: var(--text-xl);
-    padding: var(--space-4) var(--space-12);
+    padding: var(--space-4) var(--space-10);
     width: auto;
-    white-space: nowrap;
+    max-width: 600px;
+    white-space: normal;
+    text-align: center;
   }
 }
 
@@ -264,8 +266,181 @@ ol {
 }
 
 /* ============================================================
-   SECTION SHARED
+   FLASH DISCOUNT SECTION
    ============================================================ */
+.flash-discount {
+  padding-block: var(--space-12);
+  background: linear-gradient(135deg, #1F4172 0%, #2d5da6 100%);
+}
+
+.flash-discount__card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10) var(--space-8);
+  text-align: center;
+  max-width: 640px;
+  margin-inline: auto;
+  box-shadow: 0 8px 32px rgba(31, 65, 114, 0.25);
+  border: 2px solid var(--color-primary-light);
+}
+
+.flash-discount__badge {
+  display: inline-block;
+  background-color: #FEF3C7;
+  color: #92400E;
+  font-family: var(--font-display);
+  font-weight: var(--font-bold);
+  font-size: var(--text-sm);
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-4);
+}
+
+.flash-discount__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-3);
+}
+
+.flash-discount__sub {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+  margin-bottom: var(--space-6);
+}
+
+/* Timer */
+.flash-discount__timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.flash-timer__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  min-width: 64px;
+}
+
+.flash-timer__num {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: #fff;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.flash-timer__label {
+  font-size: 0.7rem;
+  font-weight: var(--font-bold);
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.flash-timer__sep {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: var(--space-4);
+}
+
+/* Coupon button area */
+.flash-discount__coupon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-3);
+}
+
+.flash-discount__copy-btn {
+  font-size: var(--text-lg);
+  padding: var(--space-4) var(--space-8);
+}
+
+.flash-discount__copy-confirm {
+  font-size: var(--text-sm);
+  color: #16A34A;
+  font-weight: var(--font-bold);
+  min-height: 1.25rem;
+  margin-bottom: var(--space-2);
+}
+
+.flash-discount__hint {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+  background-color: var(--color-surface-warm);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+}
+
+/* Expired state */
+.flash-discount__expired {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.flash-discount__expired[hidden],
+.flash-discount__active[hidden] {
+  display: none;
+}
+
+.flash-discount__expired-icon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.flash-discount__expired-title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text);
+}
+
+.flash-discount__expired-sub {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+}
+
+/* Mobile tweaks */
+@media (max-width: 479px) {
+  .flash-discount__card {
+    padding: var(--space-8) var(--space-5);
+  }
+
+  .flash-timer__block {
+    min-width: 52px;
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .flash-timer__num {
+    font-size: var(--text-xl);
+  }
+
+  .flash-discount__copy-btn {
+    width: 100%;
+  }
+}
+
+
 .section__title {
   font-family: var(--font-display);
   font-size: var(--text-3xl);
